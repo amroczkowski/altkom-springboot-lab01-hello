@@ -1,0 +1,7 @@
+GET http://localhost:8080/app/hello
+
+###
+
+GET http://localhost:8080/app/hello?name=Artur
+
+###
