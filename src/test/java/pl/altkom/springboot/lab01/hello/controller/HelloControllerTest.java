@@ -15,14 +15,14 @@ class HelloControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void should_return_default_message() throws Exception {
+    void should_return_default_message() throws Exception {
         this.mockMvc.perform(get("/hello"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string("Hello World!"));
     }
 
     @Test
-    public void should_return_message_passed_param() throws Exception {
+    void should_return_message_passed_param() throws Exception {
         this.mockMvc.perform(get("/hello?name=Artur"))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string("Hello Artur!"));
