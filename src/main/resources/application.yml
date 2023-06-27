@@ -1,3 +1,7 @@
 server:
   servlet:
     context-path: /app
+
+user-data:
+  name: ${NOT_EXISTING_ENV:World}
+#  name: ${USERNAME:World}
