@@ -1,7 +1,6 @@
 GET http://localhost:8080/app/hello
 
 ###
-
 GET http://localhost:8080/app/hello?name=Artur
 
 ### Versioning by url v1
@@ -31,3 +30,6 @@ GET http://localhost:8080/app/versioning/query?version=1
 
 ### Versioning by query v2
 GET http://localhost:8080/app/versioning/query?version=2
+
+### Server threads
+GET http://localhost:8080/app/thread/sleep

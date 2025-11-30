@@ -1,7 +1,10 @@
 server:
   servlet:
     context-path: /app
-
+  tomcat:
+    threads:
+      min-spare: 2
+      max: 2
 user-data:
   name: ${NOT_EXISTING_ENV:World}
 #  name: ${USERNAME:World}
