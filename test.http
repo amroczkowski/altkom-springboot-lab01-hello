@@ -4,4 +4,30 @@ GET http://localhost:8080/app/hello
 
 GET http://localhost:8080/app/hello?name=Artur
 
-###
+### Versioning by url v1
+GET http://localhost:8080/app/versioning/url/v1
+
+### Versioning by url v2
+GET http://localhost:8080/app/versioning/url/v2
+
+### Versioning by custom header v1
+GET http://localhost:8080/app/versioning/header/custom
+X-API-Version: 1
+
+### Versioning by custom header v2
+GET http://localhost:8080/app/versioning/header/custom
+X-API-Version: 2
+
+### Versioning by Accept header v1
+GET http://localhost:8080/app/versioning/header/accept
+Accept: application/vnd.hello.versioning-v1+json
+
+### Versioning by Accept header v2
+GET http://localhost:8080/app/versioning/header/accept
+Accept: application/vnd.hello.versioning-v2+json
+
+### Versioning by query v1
+GET http://localhost:8080/app/versioning/query?version=1
+
+### Versioning by query v2
+GET http://localhost:8080/app/versioning/query?version=2
