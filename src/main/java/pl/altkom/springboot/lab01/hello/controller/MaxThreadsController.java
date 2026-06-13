@@ -17,12 +17,5 @@ public class MaxThreadsController {
         log.info("{} is sleeping... [{}]", name, threadName);
         Thread.sleep(10000);
         log.info("{} woke up [{}]", name, threadName);
-
-        /*
-        curl "http://localhost:8080/app/thread/sleep?name=first" &
-        curl "http://localhost:8080/app/thread/sleep?name=second" &
-        curl "http://localhost:8080/app/thread/sleep?name=third" &
-        wait
-         */
     }
 }
