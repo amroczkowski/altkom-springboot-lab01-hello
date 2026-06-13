@@ -1,12 +1,10 @@
 package pl.altkom.springboot.lab01.hello.controller;
 
-import java.time.LocalDateTime;
-
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RequestMapping("/thread")
@@ -14,16 +12,16 @@ import lombok.extern.slf4j.Slf4j;
 public class MaxThreadsController {
 
     @GetMapping("/sleep")
-    public void sleep() throws InterruptedException {
+    public void sleep(@RequestParam(value = "name", required = false) final String name) throws InterruptedException {
         final String threadName = Thread.currentThread().getName();
-        log.info("{} {} sleeping...", LocalDateTime.now(), threadName);
+        log.info("{} is sleeping... [{}]", name, threadName);
         Thread.sleep(10000);
-        log.info("{} {} woke up", LocalDateTime.now(), threadName);
+        log.info("{} woke up [{}]", name, threadName);
 
         /*
-        curl "http://localhost:8080/app/thread/sleep" &
-        curl "http://localhost:8080/app/thread/sleep" &
-        curl "http://localhost:8080/app/thread/sleep" &
+        curl "http://localhost:8080/app/thread/sleep?name=first" &
+        curl "http://localhost:8080/app/thread/sleep?name=second" &
+        curl "http://localhost:8080/app/thread/sleep?name=third" &
         wait
          */
     }
